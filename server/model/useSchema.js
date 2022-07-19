@@ -1,14 +1,28 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    link: {
+    url: {
         type: String,
         required: true
+    },
+    name:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    domainName:{
+        type:String,
+        required:true
+    },
+    firstLetter:{
+        type:String,
+        required:true
     },
     visits:{
         type:Number,
         required:true
-    }
+    },
+    
 }
 );
 

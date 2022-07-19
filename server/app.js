@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express')
 const mongoose=require('mongoose')
 require("./db/conn")
-const users=require('./model/useSchema')
+const bookmark=require('./model/useSchema')
 const cors=require('cors')
-const router=require('./routes/router')
+const router=require('./routes/routes')
 
 
 const app=express();
