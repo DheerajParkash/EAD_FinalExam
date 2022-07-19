@@ -40,33 +40,5 @@ const addBookMark=async (req,res)=>{
     }
 }
 
-const SearchBookMark=async (req,res)=>{
-    try{
-        const {name}=req.params;
-         console.log(req.params)
-
-        const  getIndividualBookmark= await bookmark.find({name:name})
-        console.log(getIndividualBookmark);
-
-        res.status(201).json(getIndividualBookmark);
-    }catch(error){
-        res.status(422).json(error)
-    }
-}
-
-const deleteBookMark=async (req,res)=>{
-    try {
-        const {id}=req.params;
-
-        const deleteuser=await bookmark.findByIdAndDelete({_id:id})
-
-        console.log(deleteuser);
-        res.status(201).json(deleteuser);
-    } catch (error) {
-        res.status(422).json(error);
-    }
-}
-
-
 
 module.exports={getBookMarks,addBookMark,SearchBookMark,deleteBookMark}
